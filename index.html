@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tejaswini | BCA Student & Aspiring Software Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== THEME TOKENS: edit colours here ===== */
+:root{--bg:#f5f6fb;--surface:rgba(255,255,255,.72);--solid:#fff;--ink:#161a33;--muted:#575d7a;--line:rgba(22,26,51,.12);--a:#4f46d8;--a2:#0f9d8a;--on-a:#fff;--shadow:0 10px 30px rgba(40,40,100,.10);
+--hd:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;--bd:'Figtree','Segoe UI',system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1020;--surface:rgba(30,34,64,.62);--solid:#1a1e3a;--ink:#eceefb;--muted:#a3a9c9;--line:rgba(236,238,251,.14);--a:#8b84ff;--a2:#3fd0bb;--on-a:#0d1020;--shadow:0 10px 30px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0d1020;--surface:rgba(30,34,64,.62);--solid:#1a1e3a;--ink:#eceefb;--muted:#a3a9c9;--line:rgba(236,238,251,.14);--a:#8b84ff;--a2:#3fd0bb;--on-a:#0d1020;--shadow:0 10px 30px rgba(0,0,0,.4)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--bd);-webkit-font-smoothing:antialiased;background-image:radial-gradient(60rem 30rem at 85% -5%,color-mix(in srgb,var(--a) 18%,transparent),transparent),radial-gradient(40rem 25rem at -10% 30%,color-mix(in srgb,var(--a2) 14%,transparent),transparent);background-attachment:fixed}
+h1,h2,h3{font-family:var(--hd);line-height:1.12;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:800;margin-bottom:10px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 34px}
+:focus-visible{outline:3px solid var(--a);outline-offset:3px;border-radius:6px}
+/* nav */
+header{position:sticky;top:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:var(--surface);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:800 1.25rem var(--hd);text-decoration:none}
+.logo i{font-style:normal;color:var(--a)}
+.links{display:flex;gap:2px;align-items:center}
+.links a{padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted);transition:.2s}
+.links a:hover{color:var(--ink)}
+.links a.on{background:var(--a);color:var(--on-a)}
+.tools{display:flex;gap:8px}
+.ib{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--solid);color:var(--ink);font-size:1.1rem;cursor:pointer}
+#burger{display:none}
+@media(max-width:900px){#burger{display:block}
+.links{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;padding:12px 20px 18px;background:var(--solid);border-bottom:1px solid var(--line);display:none}
+.links.open{display:flex}.links a{padding:12px 14px}}
+/* buttons + cards */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font:600 1rem var(--bd);text-decoration:none;border:1px solid var(--line);background:var(--solid);color:var(--ink);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn.p{background:linear-gradient(135deg,var(--a),color-mix(in srgb,var(--a) 60%,var(--a2)));color:var(--on-a);border:0}
+.btn.sm{padding:8px 14px;font-size:.9rem;border-radius:10px}
+.card{background:var(--surface);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:.82rem;font-weight:600;background:color-mix(in srgb,var(--a) 14%,transparent);color:var(--a);margin:0 6px 6px 0}
+.ph{font-size:.78rem;font-weight:600;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 8px}
+/* hero */
+#home{padding:72px 0 56px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,8vw,5.2rem);font-weight:800}
+.hero h1 span{background:linear-gradient(120deg,var(--a),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font:600 1.15rem var(--hd);margin:14px 0 12px;color:var(--a2)}
+.hero p{max-width:52ch;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 22px}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.avatar{aspect-ratio:1;max-width:340px;margin:auto;width:100%;border-radius:36% 64% 58% 42%/42% 40% 60% 58%;background:linear-gradient(145deg,var(--a),var(--a2));display:grid;place-items:center;font:800 8rem var(--hd);color:var(--on-a);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero>*{animation:rise .8s both}.hero>*:nth-child(2){animation-delay:.15s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.avatar{max-width:220px;font-size:5rem;order:-1;margin:0}section{padding:60px 0}}
+/* timeline */
+.tl{border-left:3px solid var(--a);padding-left:22px;margin-left:6px}
+.tl .card{position:relative}.tl .card::before{content:"";position:absolute;left:-33px;top:28px;width:15px;height:15px;border-radius:50%;background:var(--a2);border:3px solid var(--bg)}
+.card h3{font-size:1.2rem;margin-bottom:6px}
+.card p{margin:0;color:var(--muted)}
+.proj .thumb{height:140px;border-radius:12px;margin-bottom:14px;display:grid;place-items:center;font-size:2.6rem;color:#fff}
+.proj{display:flex;flex-direction:column}.proj p{flex:1;margin-bottom:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.ico{font-size:1.7rem;margin-bottom:8px}
+.res h3{margin:20px 0 6px;font-size:1.05rem;color:var(--a)}.res h3:first-child{margin-top:0}.res ul{margin:0;padding-left:20px;color:var(--muted)}
+.goal{font:600 clamp(1.3rem,3vw,1.8rem)/1.4 var(--hd);max-width:30ch}
+form{display:grid;gap:14px}
+label{font-weight:600;font-size:.95rem;display:grid;gap:6px}
+input,textarea{font:inherit;color:var(--ink);background:var(--solid);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+.cgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+@media(max-width:800px){.cgrid{grid-template-columns:1fr}}
+.ci{display:grid;gap:14px;align-content:start}.ci b{display:block}.ci a{color:var(--a)}
+footer{padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid var(--line);font-size:.95rem}
+#note{min-height:1.4em;color:var(--a2);font-weight:600;margin:0}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+@media print{body.pr header,body.pr section:not(#resume),body.pr footer,body.pr .noprint{display:none!important}body.pr{background:#fff;color:#000}body.pr .card{box-shadow:none;border:0;backdrop-filter:none;background:#fff}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Main">
+<a class="logo" href="#home">Tejaswini<i>.</i></a>
+<div class="links" id="links">
+<a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certifications">Certifications</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+</div>
+<div class="tools"><button class="ib" id="theme" aria-label="Toggle dark or light theme">◐</button><button class="ib" id="burger" aria-label="Open menu" aria-expanded="false">☰</button></div>
+</nav></div></header>
+
+<main>
+<section id="home"><div class="wrap hero">
+<div>
+<h1>Hi, I'm <span>Tejaswini</span></h1> <!-- EDIT: your name -->
+<div class="role">BCA Student | Aspiring Software Developer</div>
+<p>Passionate computer science student focused on building practical projects, improving technical skills, and preparing for a successful career in technology.</p>
+<div class="cta"><a class="btn p" href="#projects">View My Projects</a><button class="btn" id="dl">Download Resume</button><a class="btn" href="#contact">Contact Me</a></div>
+<div class="soc">
+<a class="btn sm" href="https://github.com/" target="_blank" rel="noopener">GitHub</a> <!-- EDIT: your GitHub URL -->
+<a class="btn sm" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a> <!-- EDIT: your LinkedIn URL -->
+<a class="btn sm" href="mailto:tejaswini223@gmail.com">Email</a>
+</div></div>
+<div class="avatar" role="img" aria-label="Profile photo placeholder">T<!-- To use a photo: <img src="your-photo.jpg" alt="Tejaswini"> --></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<h2>About me</h2><p class="lead">A short introduction. Edit the text below to sound like you.</p>
+<div class="grid" id="aboutGrid"></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+<h2>Education</h2><p class="lead">Where I'm studying and what I'm learning.</p>
+<div class="tl"><div class="card">
+<h3>Bachelor of Computer Applications (BCA)</h3>
+<p>Central Commerce First Grade College, Hassan</p>
+<p style="margin:4px 0 14px"><b style="color:var(--ink)">2024 - 2027</b></p>
+<div id="course"></div>
+</div></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2><p class="lead">Tools and languages I work with. To edit, change the <code>skills</code> list in the script at the bottom of this file.</p>
+<div class="grid" id="skillGrid"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2><p class="lead"><span class="ph">PLACEHOLDER</span> These are sample projects. Replace them with your real work in the <code>projects</code> list.</p>
+<div class="grid" id="projGrid"></div>
+</div></section>
+
+<section id="certifications"><div class="wrap">
+<h2>Certifications</h2><p class="lead"><span class="ph">PLACEHOLDER</span> Replace with your real certificates and credential links.</p>
+<div class="grid" id="certGrid"></div>
+</div></section>
+
+<section id="achievements"><div class="wrap">
+<h2>Achievements</h2><p class="lead"><span class="ph">PLACEHOLDER</span> Add what you have actually done. Remove any card you don't need.</p>
+<div class="grid" id="achGrid"></div>
+</div></section>
+
+<section id="resume"><div class="wrap">
+<h2>Resume</h2><p class="lead">A quick summary. The button saves this section as a PDF using your browser's print dialog.</p>
+<div class="card res" id="resBox"></div>
+<p class="noprint" style="margin-top:18px"><button class="btn p" id="dl2">Download Resume</button></p>
+</div></section>
+
+<section id="goals"><div class="wrap">
+<h2>Career goals</h2>
+<p class="goal">I am looking for internship and entry-level opportunities where I can apply my technical knowledge, work on real-world projects, and continue developing as a software professional.</p>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Contact</h2><p class="lead">Have an internship or project in mind? Send a message and it opens in your email app.</p>
+<div class="cgrid">
+<form class="card" id="cf">
+<label>Name<input name="name" required autocomplete="name"></label>
+<label>Email<input name="email" type="email" required autocomplete="email"></label>
+<label>Subject<input name="subject" required></label>
+<label>Message<textarea name="message" rows="5" required></textarea></label>
+<button class="btn p" type="submit">Send Message</button>
+<p id="note" role="status"></p>
+</form>
+<div class="card ci">
+<div><b>Email</b><a href="mailto:tejaswini223@gmail.com">tejaswini223@gmail.com</a></div>
+<div><b>LinkedIn</b><a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/your-name</a> <span class="ph">EDIT</span></div>
+<div><b>GitHub</b><a href="https://github.com/" target="_blank" rel="noopener">github.com/your-username</a> <span class="ph">EDIT</span></div>
+<div><b>Location</b>Hassan, Karnataka</div>
+</div></div>
+</div></section>
+</main>
+<footer>© <span id="yr"></span> Tejaswini. Built with HTML, CSS and JavaScript.</footer>
+
+<script>
+/* ===== EDIT YOUR CONTENT HERE ===== */
+const about=[
+["Education","Final-stage BCA student at Central Commerce First Grade College, Hassan."],
+["Career interests","Software development, web applications and problem solving."],
+["Technical interests","Full-stack web, databases, and AI-powered tools."],
+["Strengths","Quick learner, consistent, and good at turning ideas into working projects."]
+];
+const courses=["Programming","Database Management","Web Development","Data Structures","Computer Networks"];
+const skills={
+"Programming":["Python","Java","C","C++"],
+"Web Development":["HTML","CSS","JavaScript","React"],
+"Database":["MySQL","MongoDB"],
+"Tools":["Git","GitHub","VS Code"]
+};
+const projects=[
+["Student Management System","Add, update and search student records with marks and attendance.",["Java","MySQL"],"🎓","#4f46d8,#7b5cf0"],
+["Personal Expense Tracker","Track daily spending by category and see monthly totals.",["JavaScript","HTML","CSS"],"💸","#0f9d8a,#3bbf9b"],
+["E-Commerce Website","Product listing, cart and checkout flow with a simple admin view.",["React","MongoDB"],"🛒","#d9534f,#f08a4b"],
+["College Event Management System","Create events, register students and manage attendance.",["Python","MySQL"],"📅","#2f6fde,#38b6e8"],
+["Weather Application","Search any city and view live weather with a 5-day forecast.",["JavaScript","API"],"⛅","#6a5bd8,#38b6e8"],
+["AI-powered Student Assistant","Chat assistant that answers study questions and plans revision.",["Python","React","API"],"🤖","#0f9d8a,#4f46d8"]
+];
+const certs=[
+["Python Programming Certificate","[Issuing Organization]","[Month Year]"],
+["Web Development Certificate","[Issuing Organization]","[Month Year]"],
+["Database Fundamentals","[Issuing Organization]","[Month Year]"]
+];
+const ach=[
+["🏆","Hackathons","Add the hackathon name, your role and result."],
+["💻","Coding competitions","Add the contest, rank or problems solved."],
+["📚","Academic achievements","Add your marks, ranks or scholarships."],
+["🛠️","Workshops","Add workshops and seminars you attended."],
+["🎉","College activities","Add clubs, events or volunteering."],
+["🥇","Awards","Add any award or recognition received."]
+];
+const resume={
+"Summary":"BCA student building practical projects and looking for internship and entry-level software roles.",
+"Education":["BCA, Central Commerce First Grade College, Hassan (2024 - 2027)"],
+"Skills":["Python, Java, C, C++","HTML, CSS, JavaScript, React","MySQL, MongoDB","Git, GitHub, VS Code"],
+"Projects":projects.slice(0,3).map(p=>p[0]+": "+p[1]),
+"Certifications":certs.map(c=>c[0]+" ("+c[1]+", "+c[2]+")"),
+"Achievements":["[Add your hackathons, competitions and awards]"],
+"Internship / Experience":["[Add any internship or experience, or write 'Seeking first internship']"]
+};
+
+/* ===== RENDER (you don't need to edit below) ===== */
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("aboutGrid").innerHTML=about.map(a=>`<div class="card rv"><h3>${a[0]}</h3><p>${esc(a[1])}</p></div>`).join("");
+$("course").innerHTML=courses.map(c=>`<span class="tag">${c}</span>`).join("");
+$("skillGrid").innerHTML=Object.entries(skills).map(([g,l])=>`<div class="card rv"><h3>${g}</h3><div class="row">${l.map(s=>`<span class="tag">${s}</span>`).join("")}</div></div>`).join("");
+$("projGrid").innerHTML=projects.map(p=>`<article class="card proj rv"><div class="thumb" style="background:linear-gradient(135deg,${p[4].split(",")[0]},${p[4].split(",")[1]})" aria-hidden="true">${p[3]}</div><h3>${p[0]}</h3><p>${p[1]}</p><div>${p[2].map(t=>`<span class="tag">${t}</span>`).join("")}</div><div class="row"><a class="btn sm" href="https://github.com/" target="_blank" rel="noopener">GitHub</a><a class="btn sm p" href="#" onclick="return false">Live Demo</a></div><div style="margin-top:10px"><span class="ph">PLACEHOLDER PROJECT</span></div></article>`).join("");
+$("certGrid").innerHTML=certs.map(c=>`<div class="card rv"><div class="ico">📜</div><h3>${c[0]}</h3><p>${c[1]}<br>${c[2]}</p><div class="row"><a class="btn sm" href="#" onclick="return false">View Credential</a></div></div>`).join("");
+$("achGrid").innerHTML=ach.map(a=>`<div class="card rv"><div class="ico">${a[0]}</div><h3>${a[1]}</h3><p>${a[2]}</p></div>`).join("");
+$("resBox").innerHTML=Object.entries(resume).map(([h,v])=>`<h3>${h}</h3>`+(Array.isArray(v)?`<ul>${v.map(i=>`<li>${esc(i)}</li>`).join("")}</ul>`:`<p>${esc(v)}</p>`)).join("");
+$("yr").textContent=new Date().getFullYear();
+
+/* theme (saved if the browser allows it) */
+const root=document.documentElement;
+try{const t=localStorage.getItem("theme");if(t)root.dataset.theme=t}catch(e){}
+$("theme").onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+root.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",root.dataset.theme)}catch(e){}};
+
+/* mobile menu */
+const links=$("links"),burger=$("burger");
+burger.onclick=()=>{const o=links.classList.toggle("open");burger.setAttribute("aria-expanded",o)};
+links.addEventListener("click",e=>{if(e.target.tagName==="A"){links.classList.remove("open");burger.setAttribute("aria-expanded",false)}});
+
+/* active nav + reveal */
+const navA=[...links.querySelectorAll("a")];
+const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){navA.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}}),{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("section[id]").forEach(s=>spy.observe(s));
+const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll(".rv").forEach(el=>rv.observe(el));
+
+/* resume download: prints only the resume section so you can "Save as PDF" */
+const dl=()=>{document.body.classList.add("pr");window.print();setTimeout(()=>document.body.classList.remove("pr"),500)};
+$("dl").onclick=dl;$("dl2").onclick=dl;
+
+/* contact form: opens the visitor's email app, addressed to you */
+$("cf").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+const body=encodeURIComponent(f.get("message")+"\n\nFrom: "+f.get("name")+" ("+f.get("email")+")");
+location.href="mailto:tejaswini223@gmail.com?subject="+encodeURIComponent(f.get("subject"))+"&body="+body;
+$("note").textContent="Opening your email app. If nothing opens, write to tejaswini223@gmail.com."};
+</script>
+</body>
+</html>
